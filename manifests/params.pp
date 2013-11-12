@@ -22,7 +22,7 @@ class subversion::params {
     solaris: {
       case $::kernelrelease {
         '5.11': {
-          $package = 'subversion'
+          $package = 'pkg://solaris/developer/versioning/subversion'
         }
         '5.10': {
           $package = 'SFWsubversion'
