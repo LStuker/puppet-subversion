@@ -19,6 +19,9 @@ class subversion::params {
     debian: {
       $package = 'subversion'
     }
+    suse: {
+      $package = 'subversion'
+    }
     solaris: {
       case $::kernelrelease {
         '5.11': {
