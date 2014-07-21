@@ -28,8 +28,8 @@ class subversion::params {
           $package = 'pkg://solaris/developer/versioning/subversion'
         }
         '5.10': {
-          $package         = 'CSWsvn'
-          $package_provide = 'pkgutil'
+          $package          = 'CSWsvn'
+          $package_provider = 'pkgutil'
         }
       }
     }
