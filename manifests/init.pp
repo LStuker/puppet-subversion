@@ -17,6 +17,10 @@
 #     what you're doing.
 #     Default: auto-set, platform specific
 #
+#   [*package_provider*]
+#     Name of the package provider.
+#     Default: auto-set, platform specific
+#
 # === Examples
 #
 #  class { subversion:
@@ -39,6 +43,7 @@ class subversion(
   $ensure              = 'present',
   $autoupgrade         = false,
   $package             = $subversion::params::package,
+  $package_provide     = $subversion::params::package_provide,
 ) inherits subversion::params {
 
     case $ensure {
@@ -58,7 +63,8 @@ class subversion(
   }
 
   package { $package:
-    ensure    => $package_ensure,
+    ensure          => $package_ensure,
+    package_provide => $package_provide,
   }
 
 }
