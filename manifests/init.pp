@@ -43,7 +43,7 @@ class subversion(
   $ensure              = 'present',
   $autoupgrade         = false,
   $package             = $subversion::params::package,
-  $package_provide     = $subversion::params::package_provide,
+  $package_provider    = $subversion::params::package_provider,
 ) inherits subversion::params {
 
     case $ensure {
@@ -63,8 +63,8 @@ class subversion(
   }
 
   package { $package:
-    ensure          => $package_ensure,
-    package_provide => $package_provide,
+    ensure   => $package_ensure,
+    provider => $package_provider,
   }
 
 }
