@@ -20,7 +20,13 @@ class subversion::params {
       $package = 'subversion'
     }
     suse: {
-      $package = 'subversion'
+      case $::operatingsystemrelease {
+        '11.1', '11.2', '11.3', '11.4': {
+          warning("Module 'subversion' is not currently supported on ${::operatingsystem}")
+        } default :{
+          $package = 'subversion'
+        }
+      }
     }
     solaris: {
       case $::kernelrelease {
